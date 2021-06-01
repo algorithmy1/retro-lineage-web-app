@@ -20,7 +20,7 @@ app.layout = html.Div([
 )
 def plot(n_clicks, input_text):
 
-    _data = CreateQuery(query=input_text, query_group_name="").mine().to_dash(with_parent=True)
+    _data = CreateQuery(query=input_text, query_group_name="-").mine().to_dash(with_parent=False)
     
     return _data
 
