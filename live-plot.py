@@ -38,4 +38,5 @@ def display_confirm(value):
     return True, value[0]['query']
 
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8051)
+    
+    app.run_server(host="0.0.0.0", port=8050, debug=False)

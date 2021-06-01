@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: dockerfile
     ports:
-      - "8051:8051"
+      - "8050:8050"
     volumes:
       - ./:/app/
     command: python live-plot.py
