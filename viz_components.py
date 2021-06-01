@@ -39,14 +39,14 @@ logo_bar = html.Div(
 
 textarea = html.Div(
     [
-        dbc.Textarea(id="input_text_", className="mb-3", placeholder=query, value=query, style={"height":"350px"}),
+        dbc.Textarea(id="input_text_", className="mb-3", placeholder=query, value=query, style={"height":"300px"}),
     ]
 )
 
 graph = cyto.Cytoscape(
     id='cytoscape',
     elements=data,
-    layout={'name': 'cose'},
+    layout={'name': 'concentric'},
     style={'width': '950px', 'height': '550px'},
     minZoom=0.2,
     maxZoom=2,
@@ -86,11 +86,26 @@ title = html.Div(
         html.Hr()
     ]
 )
+dropdown = html.Div(
+    [
+        dcc.Dropdown(
+            id='dropdown-update-layout',
+            value='concentric',
+            clearable=False,
+            options=[
+                {'label': name.capitalize(), 'value': name}
+                for name in ['circle', 'concentric', 'preset', 'breadthfirst', 'grid', 'random', 'cose']
+            ]
+        ),
+        html.Hr()
+    ]
+)
 
 sidebar = html.Div([
     dialog,
     logo_bar,
     title,
+    dropdown,
     textarea,
     button
 

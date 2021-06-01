@@ -20,7 +20,7 @@ app.layout = html.Div([
 )
 def plot(n_clicks, input_text):
 
-    _data = CreateQuery(query=input_text, query_group_name="group").mine().to_dash(with_parent=True)
+    _data = CreateQuery(query=input_text, query_group_name="").mine().to_dash(with_parent=True)
     
     return _data
 
@@ -37,6 +37,14 @@ def display_confirm(value):
     
     return True, value[0]['query']
 
+@app.callback(Output('cytoscape', 'layout'),
+              Input('dropdown-update-layout', 'value'))
+def update_layout(layout):
+    return {
+        'name': layout,
+        'animate': True
+    }
+
 if __name__ == "__main__":
     
-    app.run_server(host="0.0.0.0", port=8050, debug=False)
+    app.run_server(host="0.0.0.0", port=8050, debug=True)
