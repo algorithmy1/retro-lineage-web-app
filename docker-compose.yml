@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8051:8051"
+    volumes:
+      - ./:/app/
+    command: python live-plot.py
