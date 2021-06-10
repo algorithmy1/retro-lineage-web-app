@@ -39,7 +39,7 @@ logo_bar = html.Div(
 
 textarea = html.Div(
     [
-        dbc.Textarea(id="input_text_", className="mb-3", placeholder=query, value=query, style={"height":"300px"}),
+        dbc.Textarea(id="input_text_", className="mb-3", placeholder=query, value=query, style={"height":"230px"}),
     ]
 )
 
@@ -101,13 +101,20 @@ dropdown = html.Div(
     ]
 )
 
+download = html.Div([
+    html.Hr(),
+    dbc.Button('Download', color="info", id='btn-get-jpg', className="mr-1 col text-center")
+    ]
+)
+
 sidebar = html.Div([
     dialog,
     logo_bar,
     title,
     dropdown,
     textarea,
-    button
+    button,
+    download
 
 ], style=SIDEBAR_STYLE)
 

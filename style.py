@@ -13,14 +13,14 @@ SIDEBAR_STYLE = {
     "left": 0,
     "bottom": 0,
     "width": "16rem",
-    "padding": "2rem 1rem",
+    "padding": "1rem 1rem",
     "background-color": "#f8f9fa",
 }
 
 CONTENT_STYLE = {
-    "margin-left": "18rem",
+    "margin-left": "16rem",
     "margin-right": "2rem",
-    "padding": "2rem 1rem",
+    "padding": "1rem 1rem",
 }
 
 NODE_STYLE={

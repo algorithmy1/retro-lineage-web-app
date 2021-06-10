@@ -45,6 +45,35 @@ def update_layout(layout):
         'animate': True
     }
 
+@app.callback(
+    Output("cytoscape", "generateImage"),
+    [
+        Input("btn-get-jpg", "n_clicks")
+    ])
+def get_image(get_jpg_clicks):
+
+    # File type to output of 'svg, 'png', 'jpg', or 'jpeg' (alias of 'jpg')
+    ftype = 'jpg'
+    action = 'download'
+    filename = "data-lineage"
+
+    output = dict()
+
+    ctx = dash.callback_context
+    if ctx.triggered:
+        output = {
+            'type': ftype,
+            'action': action,
+            'filename': filename,
+            'options': {
+                'full':True,
+                'scale':5,
+                'quality':1
+            }
+        }
+
+    return output 
+
 if __name__ == "__main__":
     
     app.run_server(host="0.0.0.0", port=8050, debug=True)
