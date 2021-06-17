@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt --trusted-host pypi.org --trusted-host files
 
 COPY ./dist/ ./dist/
 
-RUN pip install ./dist/parser_agent-0.0.4-py3-none-any.whl
+RUN pip install ./dist/parser_agent-0.0.41-py3-none-any.whl
