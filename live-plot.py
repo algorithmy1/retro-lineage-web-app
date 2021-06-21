@@ -1,5 +1,6 @@
 from re import S
-from parser_agent.sql_create_query import CreateQuery
+#from parser_agent.sql_create_query import CreateQuery
+from parser_agent.sql_query import SqlQuery
 import dash
 import json
 import dash_html_components as html
@@ -20,8 +21,8 @@ app.layout = html.Div([
 )
 def plot(n_clicks, input_text):
 
-    _data = CreateQuery(query=input_text, query_group_name="-").mine().to_dash(with_parent=False)
-    
+    #_data = CreateQuery(query=input_text, query_group_name="-").mine().to_dash(with_parent=False)
+    _data = SqlQuery(query=input_text, queries_group_name="-").mine().to_dash(with_parent=False)
     return _data
 
 
