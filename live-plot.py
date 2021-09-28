@@ -23,6 +23,13 @@ def plot(n_clicks, input_text):
 
     #_data = CreateQuery(query=input_text, query_group_name="-").mine().to_dash(with_parent=False)
     _data = SqlQuery(query=input_text, queries_group_name="-").mine().to_dash(with_parent=False)
+    
+    for d in _data :
+    
+        if 'label' in d['data']:
+
+            d['data']['label'] = d['data']['label'][:24].lower()
+        
     return _data
 
 
